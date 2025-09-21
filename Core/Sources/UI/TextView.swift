@@ -40,13 +40,18 @@ public struct TextView: View {
     }
 }
 
-struct TextUIView: UIViewRepresentable {
+public struct TextUIView: UIViewRepresentable {
     var text: String
     var fontSize: CGFloat = 15
     var fontWeight: UIFont.Weight = .regular
     var color: UIColor = .label
     
-    func makeUIView(context: Context) -> UITextView {
+    public init(text: String) {
+        self.text = text
+      
+    }
+    
+   public func makeUIView(context: Context) -> UITextView {
         let textView = UITextView()
         textView.isEditable = false
         textView.isScrollEnabled = false
@@ -64,7 +69,7 @@ struct TextUIView: UIViewRepresentable {
         return textView
     }
     
-    func updateUIView(_ uiView: UITextView, context: Context) {
+    public func updateUIView(_ uiView: UITextView, context: Context) {
         uiView.text = text
         uiView.textColor = color
         uiView.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)

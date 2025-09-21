@@ -7,9 +7,13 @@ let package = Package(
         .iOS(.v15)
     ],
     products: [
-        .library(
+        Product.library(
             name: "NearByMessenger",
             targets: ["NearByMessenger"]
+        ),
+        Product.library(
+            name: "FeaureProfile",
+            targets: ["Profile"]
         )
     ],
     dependencies: [

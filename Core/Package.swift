@@ -4,8 +4,8 @@ import PackageDescription
 let package = Package(
     name: "Core",
     platforms: [
-          .iOS(.v13),   // 🔹 Add this
-          .macOS(.v10_15) // SwiftUI also starts here
+          .iOS(.v15),   // 🔹 Add this
+         
       ],
     products: [
         .library(
