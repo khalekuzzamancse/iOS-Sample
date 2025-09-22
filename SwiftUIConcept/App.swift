@@ -17,12 +17,7 @@ struct SwiftUIConceptApp: App {
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            TextView(
-                text:"symbol",
-                fontSize: 16,
-            )
-        }
+        ProfileNavHost()
     }
 }
 

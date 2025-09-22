@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "NearByMessenger",
     platforms: [
-        .iOS(.v15)
+        .iOS(.v17)
     ],
     products: [
         Product.library(

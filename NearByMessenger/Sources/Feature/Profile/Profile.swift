@@ -12,7 +12,10 @@ public struct Register:View{
                 fontSize : 16,
                 
             )
-        
+            SpacerVertical(height: 32)
+            _Image()
+            SpacerVertical(height: 16)
+            
             TextFieldView(
                 value: $username,
                 hints: "Username",
@@ -24,11 +27,12 @@ public struct Register:View{
                 
             )
             
+            SpacerVertical(height: 64)
             ButtonViewSolid(
                 label:"Register",
                 shape:AnyView(RoundedRectangle(cornerRadius:10)),
                 paddingHorizontal: 8,
-                paddingVertical: 4,
+                paddingVertical: 8,
                 fontSize:25,
                 minWidth:250,
                 onClick: {}
@@ -36,11 +40,39 @@ public struct Register:View{
             
             
         }
-        
-        
     
-        
         
     }
     
 }
+
+struct _Image: View {
+    private let imageSize:CGFloat=100
+    private let iconSize:CGFloat=30
+    
+    var body: some View {
+        ZStack{
+            ImageView(
+                image: .profile,
+                size: imageSize,
+                shape: Circle()
+            )
+            
+            ZStack{
+                IconView(
+                    icon: "camera",
+                    size:iconSize
+                )
+            }
+            .background(
+            RoundedRectShape(radius: iconSize/2,color:Color.yellow))
+            
+        .position(x: imageSize, y: imageSize/2)
+        }
+        .size(value: 100)
+       
+      
+        
+    }
+}
+

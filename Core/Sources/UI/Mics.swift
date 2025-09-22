@@ -2,7 +2,7 @@ import SwiftUI
 
 extension Color {
     var isDarkColor: Bool {
-        #if canImport(UIKit)
+#if canImport(UIKit)
         let uiColor = UIColor(self)
         var red: CGFloat = 0
         var green: CGFloat = 0
@@ -11,8 +11,19 @@ extension Color {
         uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         let luminance = 0.299*red + 0.587*green + 0.114*blue
         return luminance < 0.5
-        #else
+#else
         return false // fallback for macOS if needed
-        #endif
+#endif
     }
+}
+
+@MainActor
+func hidekeyboard() {
+    
+    UIApplication
+    .shared
+    .sendAction(
+        #selector(UIResponder.resignFirstResponder),
+        to: nil, from: nil, for: nil)
+    
 }
