@@ -12,8 +12,22 @@ public struct RoundedRectShape: View {
     }
     
     public var body: some View {
-        RoundedRectangle(cornerRadius: radius)
+        RoundedRectangle(cornerRadius: radius).fill(color)
+    }
+}
+
+
+public struct CircleShape: View {
+    public var color: Color
+
+    public init(color: Color) {
+        self.color = color
+    }
+
+    public var body: some View {
+        Circle()
             .fill(color)
     }
 }
+
 

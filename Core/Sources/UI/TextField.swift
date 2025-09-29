@@ -12,6 +12,7 @@ public struct TextFieldView: View {
     public var leadingIcon: AnyView?
     public var onValueChange: (String) -> Void
     public var onSubmit: ()->Void
+    private let cornerRadius:CGFloat
 
     
     public init(
@@ -19,7 +20,7 @@ public struct TextFieldView: View {
         hints: String = "",
         paddingHorizontal: CGFloat = 8,
         paddingVertical: CGFloat = 4,
-
+        cornerRadius:CGFloat=10,
         @ViewBuilder leadingIcon: () -> some View = { EmptyView() },
         onValueChange:@escaping (String)->Void = {_ in },
         onSubmit:@escaping ()->Void = {}
@@ -31,10 +32,11 @@ public struct TextFieldView: View {
         self.leadingIcon = AnyView(leadingIcon())
         self.onValueChange = onValueChange
         self.onSubmit=onSubmit
+        self.cornerRadius=cornerRadius
     }
     
     public var body: some View {
-        let shape = RoundedRectangle(cornerRadius: 30)
+        let shape = RoundedRectangle(cornerRadius: cornerRadius)
         
         HStack {
             if !(leadingIcon is EmptyView) {

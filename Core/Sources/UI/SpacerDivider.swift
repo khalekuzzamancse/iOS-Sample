@@ -6,6 +6,9 @@ public struct SpacerVertical: View {
     public init(height: CGFloat) {
         self.height = height
     }
+    public init(_ height: CGFloat) {
+        self.height = height
+    }
     
     public var body: some View {
         Spacer()

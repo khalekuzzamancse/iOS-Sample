@@ -9,7 +9,7 @@ public struct ProfileNavHost:View{
     
    public var body: some View{
         
-       Register()
+       Register().padding()
     }
     
 }
