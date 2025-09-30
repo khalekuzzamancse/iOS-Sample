@@ -9,7 +9,8 @@ import NearByMessenger
 struct SwiftUIConceptApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           // ContentView()
+            NearByMessengerNavHost()
         }
     }
 }

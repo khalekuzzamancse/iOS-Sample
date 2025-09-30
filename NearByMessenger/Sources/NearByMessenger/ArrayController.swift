@@ -82,7 +82,18 @@ class ArrayControllerImpl : VisualArrayController{
         elements[j] = elements[j].copy(position: posI)
     }
 
-    func movePointer(label: String, index: Int) { }
+    func movePointer(label: String, index: Int) {
+        guard index < cells.count else { return }
+        let targetCell = cells[index]
+        
+        if let pointerIndex = pointers.firstIndex(where: { $0.label == label }) {
+            let oldPointer = pointers[pointerIndex]
+            // Animate movement by just updating the position
+            let newPointer = oldPointer.copy(position: targetCell.position)
+            pointers[pointerIndex] = newPointer
+        }
+    }
+
     func hidePointer(label: String) { }
     func changeElementColor(index: Int, color: Color) { }
     func removePointers(labels: [String]) { }
@@ -166,7 +177,7 @@ struct Element: Equatable, CustomStringConvertible {
     }
 }
 
-struct Pointer: Equatable {
+struct Pointer: Equatable,Hashable {
     let label: String
     let position: CGPoint?
     
