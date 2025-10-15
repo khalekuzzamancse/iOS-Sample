@@ -3,7 +3,7 @@ import SwiftUI
 import SwiftUI
 import CoreUI
 import NearByMessenger
-
+import AlgorithmsVisualizer
 
 @main
 struct SwiftUIConceptApp: App {
@@ -23,11 +23,11 @@ struct ContentView: View {
 }
 
 #Preview {
-   NearByMessengerNavHost()
+  // NearByMessengerNavHost()
    //ProfileNavHost()
    // Demo()
-  
-  
+   AlgorithmsVisualizerEntryPoint()
+    
 }
 
 struct Demo: View {

@@ -26,7 +26,7 @@ let package = Package(
             name: "NearByMessenger",
             dependencies: [
                 .product(name: "CoreLib", package: "Core"),
-                "Navigation"
+                   "Navigation"
             ]
         ),
         .target(

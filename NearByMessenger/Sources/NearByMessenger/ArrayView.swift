@@ -10,18 +10,33 @@ struct ArrayView:View {
     var body: some View {
         
         VStack{
-            Button("Swap 0 and 1") {
-                let ctrl = controller  // capture safely
-                Task {
-                    await ctrl.swap(i: 0, j: 1, delay: 0.3)
-                    ctrl.movePointer(label: "i", index: cnt%4)
-                    cnt+=1
-                }
-            }.padding()
-                       .background(Color.blue)
-                       .foregroundColor(.white)
-                       .cornerRadius(8)
+            HStack{
+                Button("Swap 0 and 1") {
+                    let ctrl = controller  // capture safely
+                    Task {
+                        await ctrl.swap(i: 0, j: 1, delay: 0.3)
+                      
+                    }
+                }.padding()
+                           .background(Color.blue)
+                           .foregroundColor(.white)
+                           .cornerRadius(8)
+                
+                Button("Move") {
+                    let ctrl = controller  // capture safely
+                    Task {
+                       
+                        ctrl.movePointer(label: "i", index: cnt%4)
+                        cnt+=1
+                    }
+                }.padding()
+                           .background(Color.blue)
+                           .foregroundColor(.white)
+                           .cornerRadius(8)
 
+
+            }
+          
             _ArrayView(controller: controller)
         }
        
@@ -60,7 +75,7 @@ struct _ArrayView: View {
             ForEach(controller.elements.indices, id: \.self) { index in
                 let element = controller.elements[index]
                 ElementView(label: element.label, color: element.color, size: 64)
-                    .position(element.position) // 👈 position comes from controller
+                    .position(x:element.position.x,y:element.position.y) // 👈 position comes from controller
             }
             let cell=controller.cells[0]
             
@@ -144,7 +159,10 @@ struct CellPointer: View {
     @State private var animatedPosition: CGPoint = .zero
 
     var body: some View {
+        
+    
         Text(label)
+
             .foregroundColor(color)
             .frame(width: cellSize, height: cellSize)
             .background(Color.yellow.opacity(0.4)) // Material-like
