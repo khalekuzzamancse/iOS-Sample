@@ -4,23 +4,19 @@ import SwiftUI
 import CoreUI
 import NearByMessenger
 import AlgorithmsVisualizer
+import UiComponents
 
 @main
 struct SwiftUIConceptApp: App {
     var body: some Scene {
         WindowGroup {
-           // ContentView()
-            NearByMessengerNavHost()
+           UIComponentsEntryPoint()
         }
     }
 }
 
 
-struct ContentView: View {
-    var body: some View {
-        NearByMessengerNavHost()
-    }
-}
+
 
 #Preview {
   // NearByMessengerNavHost()
