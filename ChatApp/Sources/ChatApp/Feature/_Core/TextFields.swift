@@ -65,16 +65,17 @@ public struct AuthTextField<Leading: View, Trailing: View>: View {
 }
 
 struct PasswordField: View {
-    @State private var password = ""
+    @Binding var password:String
+    let hints: String
     @State private var show = true
     @State private var masked = ""
     
     var body: some View {
         AuthTextField(
             value: show ? $password : $masked,
-            hints: "Password",
+            hints: hints,
             leadingIcon: {
-                IconView(icon: "lock.fill", size:20,tint: .blue)
+                IconView(icon: "lock.circle.fill", size:20,tint: .blue)
             },
             trailingIcon: {
                 

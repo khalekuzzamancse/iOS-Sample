@@ -1,6 +1,10 @@
 
 import SwiftUI
 import CoreUI
+
+#Preview{
+    Register()
+}
 public struct Register:View{
     @State private var username = ""
     @State private var showSheet=false

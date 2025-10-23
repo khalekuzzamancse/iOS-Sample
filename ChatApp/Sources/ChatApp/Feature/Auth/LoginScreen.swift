@@ -4,6 +4,7 @@ import CoreUI
 
 struct LoginScreen: View {
     @State private var username = ""
+    @State private var password = ""
     var body: some View {
         
         VStack{
@@ -20,15 +21,16 @@ struct LoginScreen: View {
                 hints: "Username",
                 leadingIcon:{
                   
-                    Image(systemName: "person.fill")
+                    Image(systemName: "person.circle.fill")
                         .font(.system(size: 20))
                         .foregroundColor(.blue)
                 },
             )
             .widthIn(max: 400)
             SpacerVertical(32)
-            PasswordField()
-                .widthIn(max: 400)
+            PasswordField(
+                password: $password, hints: "Password"
+            ).widthIn(max: 400)
             SpacerVertical(48)
             ButtonViewSolid(
                 label:"Login",
