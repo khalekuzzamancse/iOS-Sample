@@ -14,7 +14,7 @@ struct ArrayView:View {
                 Button("Swap 0 and 1") {
                     let ctrl = controller  // capture safely
                     Task {
-                        await ctrl.swap(i: 0, j: 1, delay: 0.3)
+                        //await ctrl.swap(i: 0, j: 1, delay: 0.3)
                       
                     }
                 }.padding()
