@@ -3,7 +3,14 @@ import Foundation
 main()
 
 private func main() {
-    DataTypeSamples.main()
+    //DataTypeSamples.main()
+    //ExpressioSamples.main()
+   // TypeCastSamples.main()
+    //NullSafetySamples.main()
+    //IterationSamples.main()
+  //  FunctioalProgramming.main()
+  //  SubtypePolymorphismSamples.main()
+    EqualitySamples.main()
 }
 
 
