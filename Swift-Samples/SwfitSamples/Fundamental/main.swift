@@ -10,7 +10,11 @@ private func main() {
     //IterationSamples.main()
   //  FunctioalProgramming.main()
   //  SubtypePolymorphismSamples.main()
-    EqualitySamples.main()
+    //EqualitySamples.main()
+   // CollectionSamples.main()
+    //ExceptionHandlingSamples.main()
+    //EnumSamples.main()
+    PropertyWrapperSamples.main()
 }
 
 

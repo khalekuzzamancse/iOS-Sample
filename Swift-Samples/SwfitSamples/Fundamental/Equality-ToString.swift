@@ -8,7 +8,6 @@ class EqualitySamples{
         hashAbleSample()
         toStringSamples()
     }
-    
 }
 
 fileprivate func sample1(){
@@ -80,8 +79,8 @@ fileprivate func toStringSamples(){
     let b=Boy("b",10)
     print("\(a)")
     print("\(b)")
-    
 }
+
 fileprivate class Boy:CustomStringConvertible{
     let name: String
     let age: Int
