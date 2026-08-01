@@ -7,7 +7,6 @@ class CoreNetworkSample{
         }
         readLine() //Wait for result
        
-        
     }
 }
 

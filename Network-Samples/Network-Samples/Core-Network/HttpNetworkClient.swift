@@ -5,6 +5,7 @@ final class HttpNetworkClient: NetworkClient {
 
     func getOrThrow(url: String,headers: Headers?) async throws -> String {
         try await request(url: url,method: "GET",data: nil,headers: headers)
+        
     }
 
     func postOrThrow(url: String,data: String,headers: Headers?) async throws -> String {

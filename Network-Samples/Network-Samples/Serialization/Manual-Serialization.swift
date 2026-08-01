@@ -2,7 +2,7 @@ import Foundation
 
 class ManualSerializationSamples{
     
-    static func main(){
+    static func main() {
         sample1()
     }
     
@@ -40,6 +40,7 @@ fileprivate func _parseOrThrow(_ item:[String: Any]) throws{
     print("Item: \(name ?? "")")
     
 }
+
 
 
 fileprivate let json = """
