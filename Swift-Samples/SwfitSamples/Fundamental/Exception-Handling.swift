@@ -30,6 +30,34 @@ fileprivate func tryAsExpression() {
     
 }
 
+fileprivate func fetchUser1() throws{
+    do{
+        
+    }
+    catch (let error as Exception) {
+        print(error)
+    }
+    //Since method markes as "throw", fallback "catch" block is optional
+//    catch {
+//        print(error)
+//    }
+//    
+}
+
+
+fileprivate func fetchUser2() { //Not marked for throw,
+    do{
+        
+    }
+    catch (let error as Exception) {
+        print(error)
+    }
+    //Fallback catch is mandory
+    catch {
+        print(error)
+    }
+//
+}
 fileprivate func tryAsStatment() {
     do{ // "do" instead of "try"
       var result = try  _vote("B", 19)   //"try" before call

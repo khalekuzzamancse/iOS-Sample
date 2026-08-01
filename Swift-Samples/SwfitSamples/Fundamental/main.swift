@@ -14,7 +14,8 @@ private func main() {
    // CollectionSamples.main()
     //ExceptionHandlingSamples.main()
     //EnumSamples.main()
-    PropertyWrapperSamples.main()
+ //   PropertyWrapperSamples.main()
+    AsyncWaitSamples.main()
 }
 
 
